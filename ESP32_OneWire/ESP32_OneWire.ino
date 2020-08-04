@@ -11,8 +11,8 @@ const char* password = "x";
 const char* serverName = "http://192.168.3.104:8100/v1/data/for/Pool";
 
 unsigned long lastTime = 0;
-// Set timer to 15 seconds (15000)
-unsigned long timerDelay = 15000;
+// Set timer to 30 seconds (30000)
+unsigned long timerDelay = 30000;
 
 // Data wire is plugged into port 2 on the Arduino
 #define ONE_WIRE_BUS 13
@@ -96,6 +96,9 @@ void loop() {
     }
     else {
       Serial.println("WiFi Disconnected");
+      Serial.println("Restarting...");
+      delay(1000);
+      ESP.restart();
     }
     lastTime = millis();
   }
