@@ -6,6 +6,7 @@
 #include <LPS22HHSensor.h>
 
 #include <ArduinoJson.h>
+#include <ArduinoHttpClient.h>
 
 STTS751Sensor *STTS751_Temp;
 HTS221Sensor *HTS221_HumTemp;
@@ -13,6 +14,13 @@ LPS22HHSensor *LPS22HH_PressTemp;
 
 // Create a unique ID for the data from each STM32 running this code
 const char* jediID = "STM32F7_IKSO1A3";
+
+char serverAddress[] = "192.168.3.104";  // server address
+int port = 8100;
+
+// initialize the library instance:
+EthernetClient eth;
+HttpClient client = HttpClient(eth, serverAddress, port);
 
 void setup() {
   // initialize digital pin LED_BUILTIN as an output
