@@ -34,7 +34,6 @@ void setup() {
 }
 
 void loop() {
-
   //Read STTS751 Temperature
   float STTS751_tempC = 0;
   STTS751_Temp->GetTemperature(&STTS751_tempC);
@@ -48,14 +47,11 @@ void loop() {
     Serial.println("Link status: On");
 
     digitalWrite(LED_BUILTIN, HIGH);
-    delay(500);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(500);
-
   }
   else if (Ethernet.linkStatus() == LinkOFF) {
     Serial.println("Link status: Off");
-    delay(1000);
+
+    digitalWrite(LED_BUILTIN, LOW);
   }  
-  delay(100);
+  delay(500);
 }

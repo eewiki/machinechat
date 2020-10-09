@@ -27,13 +27,11 @@ void loop() {
     Serial.println("Link status: On");
 
     digitalWrite(LED_BUILTIN, HIGH);
-    delay(500);
-    digitalWrite(LED_BUILTIN, LOW);
-    delay(500);
-
   }
   else if (Ethernet.linkStatus() == LinkOFF) {
     Serial.println("Link status: Off");
-    delay(1000);
-  }  
+	
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+  delay(500); 
 }
