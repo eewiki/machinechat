@@ -1,5 +1,14 @@
 #include <WebOTA.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+uint8_t temprature_sens_read();
+#ifdef __cplusplus
+}
+#endif
+uint8_t temprature_sens_read();
+
 // Create a unique ID for the data from each NodeMCU running this code
 const char* jediID = "WorkShop-ESP32-Lab2";
 
@@ -26,17 +35,24 @@ void setup() {
     delay(500);
   }
 
-	init_wifi(ssid, password, host);
+  init_wifi(ssid, password, host);
 
-	// Defaults to 8080 and "/webota"
-	//webota.init(80, "/update");
+  // Defaults to 8080 and "/webota"
+  //webota.init(80, "/update");
 }
+
+uint8_t temp_farenheit;
 
 // the loop function runs over and over again forever
 void loop() {
-	int md = 1000;
+  int md = 1000;
 
-	webota.delay(md);
+  temp_farenheit = temprature_sens_read();
 
-	webota.handle();
+  Serial.print(" | ESP32 Temp[F]: ");
+  Serial.print(temp_farenheit, 4);
+  Serial.println(" |");
+
+  webota.delay(md);
+  webota.handle();
 }

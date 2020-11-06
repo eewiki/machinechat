@@ -37,6 +37,5 @@ void loop() {
   int md = 1000;
 
   webota.delay(md);
-
   webota.handle();
 }
