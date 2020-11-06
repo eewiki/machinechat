@@ -45,6 +45,7 @@ void setup() {
     Serial.print(".");
   }
 
+  delay(1000);
   Serial.flush();
 
   // Defaults to 8080 and "/webota"
