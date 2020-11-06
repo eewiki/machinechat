@@ -4,7 +4,7 @@
 const char* jediID = "WorkShop-ESP32-Lab1";
 
 // Wi-Fi settings - replace with your Wi-Fi SSID and password
-const char* host     = "REMOTICON-OTA"; // Used for MDNS resolution
+const char* mdns     = "REMOTICON-OTA"; // Used for MDNS resolution
 //const char* ssid     = "DemoWiFi";
 //const char* password = "DemoWiFi";
 
@@ -26,7 +26,7 @@ void setup() {
     delay(500);
   }
 
-  init_wifi(ssid, password, host);
+  init_wifi(ssid, password, mdns);
 
   // Wait for Wi-Fi connection and show progress on serial monitor
   while (WiFi.status() != WL_CONNECTED) {
