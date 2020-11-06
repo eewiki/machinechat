@@ -37,6 +37,14 @@ void setup() {
 
   init_wifi(ssid, password, host);
 
+  // Wait for Wi-Fi connection and show progress on serial monitor
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.flush();
+
   // Defaults to 8080 and "/webota"
   //webota.init(80, "/update");
 }
@@ -50,7 +58,7 @@ void loop() {
   temp_farenheit = temprature_sens_read();
 
   Serial.print(" | ESP32 Temp[F]: ");
-  Serial.print(temp_farenheit, 4);
+  Serial.print(temp_farenheit);
   Serial.println(" |");
 
   webota.delay(md);

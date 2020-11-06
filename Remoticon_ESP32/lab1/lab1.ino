@@ -28,6 +28,15 @@ void setup() {
 
   init_wifi(ssid, password, host);
 
+  // Wait for Wi-Fi connection and show progress on serial monitor
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.flush();
+
+
   // Defaults to 8080 and "/webota"
   //webota.init(80, "/update");
 }
