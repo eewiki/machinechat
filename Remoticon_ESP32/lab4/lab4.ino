@@ -1,5 +1,6 @@
 #include <WebOTA.h>
 #include <ArduinoJson.h>
+#include <HTTPClient.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -80,4 +81,19 @@ void loop() {
 
   //This prints the JSON to the serial monitor screen
   Serial.println(postData);
+
+  if (WiFi.status() == WL_CONNECTED) {
+      HTTPClient http;
+
+      http.begin(serverName);
+      http.addHeader("Content-Type", "application/json");
+
+      int httpResponseCode = http.POST(postData);
+     
+      Serial.print("HTTP Response code: ");
+      Serial.println(httpResponseCode);
+        
+      // Free resources
+      http.end();
+  }
 }
