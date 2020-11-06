@@ -17,7 +17,7 @@ const char* jediID = "WorkShop-ESP32-Lab2";
 // Wi-Fi settings - replace with your Wi-Fi SSID and password
 const char* host     = "REMOTICON-OTA"; // Used for MDNS resolution
 //const char* ssid     = "DemoWiFi";
-//const char* password = "BeagleBone";
+//const char* password = "DemoWiFi";
 
 // IP address of server running Machinechat JEDI software
 // If you changed the JEDI port number, replace 8100 with the new port
