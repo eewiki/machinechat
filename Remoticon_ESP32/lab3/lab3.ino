@@ -1,4 +1,5 @@
 #include <WebOTA.h>
+#include <ArduinoJson.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -12,7 +13,7 @@ uint8_t temprature_sens_read();
 uint8_t temp_farenheit;
 
 // Create a unique ID for the data from each NodeMCU running this code
-const char* jediID = "WorkShop-ESP32-Lab2";
+const char* jediID = "WorkShop-ESP32-Lab3";
 
 // Wi-Fi settings - replace with your Wi-Fi SSID and password
 const char* host     = "REMOTICON-OTA"; // Used for MDNS resolution
@@ -60,6 +61,18 @@ void loop() {
   Serial.print(" | ESP32 Temp[F]: ");
   Serial.print(temp_farenheit);
   Serial.println(" |");
+
+  //Following code creates the serialized JSON string to send to JEDI One
+  //using ArduinoJson library
+  StaticJsonDocument <200> doc;
+
+  JsonObject context = doc.createNestedObject("context");
+  context["target_id"] = String(jediID);
+
+  JsonObject data = doc.createNestedObject("data");
+  data["ESP_tempF"] = temp_farenheit;
+
+  serializeJson(doc, postData);
 
   webota.delay(md);
   webota.handle();
