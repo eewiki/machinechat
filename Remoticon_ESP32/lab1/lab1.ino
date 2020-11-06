@@ -1,4 +1,4 @@
-const char* host     = "ESP-OTA"; // Used for MDNS resolution
+const char* host     = "REMOTICON-OTA"; // Used for MDNS resolution
 const char* ssid     = "DemoWiFi";
 const char* password = "BeagleBone";
 
