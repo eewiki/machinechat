@@ -13,7 +13,7 @@ uint8_t temprature_sens_read();
 uint8_t temp_farenheit;
 
 // Create a unique ID for the data from each NodeMCU running this code
-const char* jediID = "WorkShop-ESP32-Lab3";
+const char* jediID = "WorkShop-ESP32-Lab4";
 
 // Wi-Fi settings - replace with your Wi-Fi SSID and password
 const char* host     = "REMOTICON-OTA"; // Used for MDNS resolution
