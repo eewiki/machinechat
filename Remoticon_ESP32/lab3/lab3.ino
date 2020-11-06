@@ -46,7 +46,6 @@ void setup() {
     Serial.print(".");
   }
 
-  delay(1000);
   Serial.flush();
 
   // Defaults to 8080 and "/webota"
@@ -57,6 +56,9 @@ void setup() {
 void loop() {
   String postData;
   int md = 1000;
+
+  webota.delay(md);
+  webota.handle();
 
   temp_farenheit = temprature_sens_read();
 
@@ -76,6 +78,6 @@ void loop() {
 
   serializeJson(doc, postData);
 
-  webota.delay(md);
-  webota.handle();
+  //This prints the JSON to the serial monitor screen
+  Serial.println(postData);
 }

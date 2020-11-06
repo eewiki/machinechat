@@ -45,7 +45,6 @@ void setup() {
     Serial.print(".");
   }
 
-  delay(1000);
   Serial.flush();
 
   // Defaults to 8080 and "/webota"
@@ -56,12 +55,12 @@ void setup() {
 void loop() {
   int md = 1000;
 
+  webota.delay(md);
+  webota.handle();
+
   temp_farenheit = temprature_sens_read();
 
   Serial.print(" | ESP32 Temp[F]: ");
   Serial.print(temp_farenheit);
   Serial.println(" |");
-
-  webota.delay(md);
-  webota.handle();
 }
