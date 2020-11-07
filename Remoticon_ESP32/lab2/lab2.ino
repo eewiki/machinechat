@@ -9,7 +9,7 @@ uint8_t temprature_sens_read();
 #endif
 uint8_t temprature_sens_read();
 
-uint8_t temp_farenheit;
+int8_t ESP32_tempF;
 
 // Create a unique ID for the data from each NodeMCU running this code
 const char* jediID = "WorkShop-ESP32-Lab2";
@@ -58,9 +58,9 @@ void loop() {
   webota.delay(md);
   webota.handle();
 
-  temp_farenheit = temprature_sens_read();
+  ESP32_tempF = temprature_sens_read();
 
   Serial.print(" | ESP32 Temp[F]: ");
-  Serial.print(temp_farenheit);
+  Serial.print(ESP32_tempF);
   Serial.println(" |");
 }
