@@ -113,7 +113,7 @@ void loop() {
   Serial.print(" | ESP32 Temp[F]: ");
   Serial.print(ESP32_tempF);
   Serial.print(" | 1W Temp[F]: ");
-  Serial.print(OneWire_tempF, 3);
+  Serial.print(OneWire_tempF, 1);
   Serial.println(" |");
 }
 
