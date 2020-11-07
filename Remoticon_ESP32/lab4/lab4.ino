@@ -133,7 +133,6 @@ void loop() {
 
   //This prints the JSON to the serial monitor screen
   Serial.println(postData);
-
 }
 
 // function to print a device address
