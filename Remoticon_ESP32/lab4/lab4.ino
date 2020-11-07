@@ -69,7 +69,7 @@ void setup() {
     Serial.println("OFF");
   }
 
-  if (!sensors.getAddress(insideThermometer, 0) {
+  if (!sensors.getAddress(insideThermometer, 0)) {
     Serial.println("Unable to find address for Device 0"); 
   }
   // show the addresses we found on the bus
