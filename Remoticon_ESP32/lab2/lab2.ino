@@ -9,7 +9,7 @@ uint8_t temprature_sens_read();
 #endif
 uint8_t temprature_sens_read();
 
-int8_t ESP32_tempF;
+uint8_t ESP32_tempF;
 
 // Create a unique ID for the data from each NodeMCU running this code
 const char* jediID = "WorkShop-ESP32-Lab2";
