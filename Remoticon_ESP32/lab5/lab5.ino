@@ -14,8 +14,8 @@ uint8_t temprature_sens_read();
 uint8_t temprature_sens_read();
 
 uint8_t ESP32_tempF;
-float 1W_tempC;
-float 1W_tempF;
+float OneWire_tempC;
+float OneWire_tempF;
 
 // Data wire is plugged into pin 13
 #define ONE_WIRE_BUS 13
@@ -110,13 +110,13 @@ void loop() {
 
   sensors.requestTemperatures();
 
-  1W_tempC = sensors.getTempC(insideThermometer);
-  1W_tempF = DallasTemperature::toFahrenheit(1W_tempC);
+  OneWire_tempC = sensors.getTempC(insideThermometer);
+  OneWire_tempF = DallasTemperature::toFahrenheit(OneWire_tempC);
 
   Serial.print(" | ESP32 Temp[F]: ");
   Serial.print(ESP32_tempF);
   Serial.print(" | 1W Temp[F]: ");
-  Serial.print(1W_tempF, 3);
+  Serial.print(OneWire_tempF, 3);
   Serial.println(" |");
 
   //Following code creates the serialized JSON string to send to JEDI One
@@ -128,7 +128,7 @@ void loop() {
 
   JsonObject data = doc.createNestedObject("data");
   data["ESP32_tempF"] = ESP32_tempF;
-  data["1W_tempF"] = 1W_tempF;
+  data["OneWire_tempF"] = OneWire_tempF;
 
   serializeJson(doc, postData);
 
