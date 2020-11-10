@@ -6,4 +6,4 @@
 
 ***T9602 sensor.*** *Image from Amphenol/Telaire (see link above).*
 
-based on https://github.com/NorthernWidget-Skunkworks/T9602_Library but heavily modified
+based on https://github.com/NorthernWidget-Skunkworks/T9602_Library but modified
