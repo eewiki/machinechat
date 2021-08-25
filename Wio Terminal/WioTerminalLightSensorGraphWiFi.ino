@@ -1,5 +1,5 @@
 /*
- * Filename: WioTerminalLightSensorWiFi.ino
+ * Filename: WioTerminalLightSensorGraphWiFi.ino
  * purpose: read light sensor on Wio Terminal, display on TFT screen and HTTP post to machinechat JEDI One
  */
  
