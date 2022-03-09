@@ -1,0 +1,3 @@
+this is directory for MicroPython PyCharm project sensor_ms8607THV with file main.py
+# description: Xbee3 Zigbee Micropython MS8607 sensor project that sleeps x seconds, then wakes to send temperature,
+#              humidity, and battery voltage readings to coordinator
