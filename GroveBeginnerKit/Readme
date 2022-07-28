@@ -1,1 +1,2 @@
-
+An Arduino application running on the Grove Beginner Kit reads the various sensors, displays sensor data on the OLED display, and sends sensor data 
+over the serial interface in format compatible with the the JEDI Serial Data Collector. 
