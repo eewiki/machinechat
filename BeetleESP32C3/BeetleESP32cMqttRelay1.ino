@@ -1,9 +1,10 @@
 /*
  WiFi/MQTT enabled relay example implemented on DFRobot Beetle ESP32C3
- filename: BeetleESP32cMqttRelay.ino
+ filename: BeetleESP32cMqttRelay1.ino
  project hardware: DFRobot Beetle ESP32C3 board and Seeed Grove Relay board
- project function: connects to the Machinechat MQTT broker and subscribes to multiple topics (including a virtual button with two states "true" and "false").
- The virtual button topic is monitored and used to control the state of the relay
+ project function: ESP32 mqtt client connects to the Machinechat MQTT broker and subscribes to multiple topics (including a 
+ virtual toggle switch on the JEDI data dashboard with two states "true" and "false").
+ The virtual toggle switch value topic is monitored and used to control the state of the relay.
 
 
 */
